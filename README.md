@@ -76,7 +76,7 @@ export class SomeComponent extends Unsubscribe {
   fetchPosts() {
       return this.http.get('http://my-project.com/posts').pipe(
           // clears this subscription on NgDestroy life cycle hook
-          takeUntil(this.takeUntilDestroy())
+          this.takeUntilDestroy()
       );
   }
 }
